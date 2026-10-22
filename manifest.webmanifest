@@ -1,0 +1,19 @@
+{
+  "name": "GA3 Equipment Record",
+  "short_name": "GA3",
+  "description": "Offline-first GA3 equipment record and PDF export.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f3f6fa",
+  "theme_color": "#087ee0",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

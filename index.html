@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#087ee0">
+  <meta name="description" content="An offline-first GA3 form for recording equipment checks and exporting a PDF.">
+  <title>GA3 Form</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">G</span><div><strong>GA3</strong><small>Benas Pelakauskas</small></div></div>
+    <div class="top-actions"><span id="saveStatus" class="save-status" aria-live="polite">Saved on this device</span><button id="newFormBtn" class="button button-quiet" type="button">New form</button></div>
+  </header>
+
+  <main class="app-shell">
+
+    <section class="form-card" aria-label="GA3 form">
+      <div class="form-heading">
+        <label class="location-field"><span>Location / ID</span><input id="location" type="text" autocomplete="off" placeholder="Enter site location or ID"></label>
+        <label class="person-field"><span>Name / Position</span><input id="defaultPerson" type="text" autocomplete="name" placeholder="Your name & position"></label>
+      </div>
+
+      <div class="table-wrap">
+        <table id="ga3Table">
+          <thead><tr>
+            <th class="item-col">Item</th><th class="serial-col">Serial No</th><th class="issues-col">Issues?</th><th class="action-col">Action taken</th><th class="date-col"><button type="button" id="refreshDates" class="th-button" title="Set all row dates to today">Date &amp; time <span>↻</span></button></th><th class="name-col">Name &amp; position</th><th class="delete-col screen-only"><span class="sr-only">Remove row</span></th>
+          </tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <div class="table-footer"><span id="rowCount">0 items</span><button id="addRowBtn" class="button button-outline" type="button"><span class="plus-small">+</span> Add item row</button></div>
+
+      <div class="bottom-grid">
+        <section class="signature-section">
+          <div class="section-title"><div><h3>Signature</h3><p>Draw with your finger</p></div><button id="clearSignature" class="text-button" type="button">Clear</button></div>
+          <div class="signature-pad-wrap"><canvas id="signaturePad" aria-label="Signature drawing area" role="img"></canvas><div id="signatureHint" class="signature-hint">Sign here</div></div>
+          <p class="signature-note">The signature is not retained when this app is closed or refreshed.</p>
+        </section>
+        <aside class="export-panel">
+          <div class="export-icon">↗</div><h3>Ready to finish?</h3><p>Check entries and signature before creating the PDF.</p>
+          <button id="exportBtn" class="button button-primary button-wide" type="button"><span>✓</span> Confirm &amp; export PDF</button>
+          <p class="export-help">Your PDF is created on this device. In the print dialog, choose “Save as PDF”.</p>
+        </aside>
+      </div>
+    </section>
+    <footer class="page-footer"><span>GA3 · Benas Pelakauskas</span><span>Your form data stays in this browser on this device.</span></footer>
+  </main>
+
+  <dialog id="newFormDialog" class="confirm-dialog">
+    <form method="dialog"><h2>Start a new GA3 form?</h2><p>This clears the current form from this device. Export or copy anything you need first.</p><div class="dialog-actions"><button class="button button-quiet" value="cancel">Cancel</button><button id="confirmNewForm" class="button button-danger" value="confirm">Start new form</button></div></form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
