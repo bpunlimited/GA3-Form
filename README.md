@@ -1,18 +1,6 @@
 # GA3 Offline-first PWA
 
-A responsive GA3 form for Windows laptops and Android devices. It saves draft fields in local browser storage, supports adding/removing rows, captures a signature in memory, and prints the completed form to PDF.
-
-## Run locally for development
-
-A PWA service worker requires a secure context (`https://`) or `localhost`. Opening `index.html` directly with `file://` will let the form run, but install/offline caching will not be enabled.
-
-If Python is installed, open a terminal in this folder and run:
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000` in your browser. This is suitable for testing on the laptop. To install the PWA on devices, publish the folder to a static HTTPS host (or serve it on a trusted HTTPS local network). No backend is needed.
+A responsive GA3 form for Windows laptops and Android devices. It saves draft fields in local browser storage, supports adding/removing rows, captures a signature, and prints the completed form to PDF.
 
 ## Install
 
