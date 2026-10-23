@@ -1,4 +1,4 @@
-# GA3 Offline-first PWA
+# GA3 PWA
 
 A responsive GA3 form for Windows laptops and Android devices. It saves draft fields in local browser storage, supports adding/removing rows, captures a signature, and prints the completed form to PDF.
 
