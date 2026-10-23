@@ -1,7 +1,7 @@
 {
   "name": "GA3 Equipment Record",
   "short_name": "GA3",
-  "description": "Offline-first GA3 equipment record and PDF export.",
+  "description": "Offline GA3 equipment record and PDF export.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
