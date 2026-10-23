@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#087ee0">
-  <meta name="description" content="An offline-first GA3 form for recording equipment checks and exporting a PDF.">
+  <meta name="description" content="An offline GA3 form for recording equipment checks and exporting a PDF.">
   <title>GA3 Form</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -19,8 +19,8 @@
   <main class="app-shell">
 
     <section class="form-card" aria-label="GA3 form">
+		<div><span class="form-kicker">FORM</span><h2>GA3 Equipment Record</h2></div>
       <div class="form-heading">
-	  <div><span class="form-kicker">FORM</span><h2>GA3 Equipment Record</h2></div>
         <label class="location-field"><span>Location / ID</span><input id="location" type="text" autocomplete="off" placeholder="Enter site location or ID"></label>
         <label class="person-field"><span>Name / Position</span><input id="defaultPerson" type="text" autocomplete="name" placeholder="Your name & position"></label>
       </div>
